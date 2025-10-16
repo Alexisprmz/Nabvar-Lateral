@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "navbar": {
+    "Navbarlateral": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/navbar",
+            "outputPath": "dist/navbarlateral",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -34,12 +34,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -69,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "navbar:build:production"
+              "buildTarget": "Navbarlateral:build:production"
             },
             "development": {
-              "buildTarget": "navbar:build:development"
+              "buildTarget": "Navbarlateral:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "093517a9-c2d9-400d-ba8f-a63cda5e1e99"
   }
 }

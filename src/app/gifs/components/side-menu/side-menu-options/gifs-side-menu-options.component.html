@@ -1,0 +1,9 @@
+<div id="nav" class="w-full px-6">
+  <app-option-menu
+    *ngFor="let item of menuOptions"
+    [title]="item.title"
+    [subtitle]="item.subtitle"
+    [icon]="item.icon"
+    [router]="item.router"
+  ></app-option-menu>
+</div>

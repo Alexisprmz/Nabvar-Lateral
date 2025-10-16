@@ -1,0 +1,59 @@
+<aside class="w-64 bg-slate-900 text-white h-screen flex flex-col">
+  <div class="p-6">
+    <h1 class="text-2xl font-bold">
+      Dash<span class="text-blue-500">8</span>.
+    </h1>
+    <p class="text-slate-400 text-sm mt-1">
+      Manage your actions and activities
+    </p>
+  </div>
+
+  <div class="px-6 py-4">
+    <p class="text-slate-400 text-sm mb-2">Welcome back,</p>
+    <div class="flex items-center gap-3">
+      <img 
+        [src]="userAvatar" 
+        [alt]="userName" 
+        class="w-10 h-10 rounded-full"
+      />
+      <span class="font-medium">{{ userName }}</span>
+    </div>
+  </div>
+<nav class="flex-1 px-3 py-4">
+  <ul class="divide-y divide-slate-700">
+    <li *ngFor="let item of menuItems">
+      <a
+        [routerLink]="item.route"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="w-full flex items-center gap-3 px-3 py-3 transition-colors duration-200 hover:bg-slate-800 rounded-lg"
+      >
+        <div class="flex-shrink-0">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke-width="1.5" 
+            stroke="currentColor" 
+            class="w-5 h-5"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              [attr.d]="item.icon" 
+            />
+          </svg>
+        </div>
+        
+        <div class="flex-1 text-left">
+          <div class="font-medium text-sm">{{ item.title }}</div>
+          <div class="text-xs text-slate-400">
+            {{ item.subtitle }}
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+</aside>
