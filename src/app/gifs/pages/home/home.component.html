@@ -1,0 +1,112 @@
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 flex flex-col items-center justify-center px-6 py-12">
+  <div class="max-w-5xl mx-auto">
+    <!-- Título principal con gradiente -->
+    <div class="text-center mb-12">
+      <h1 class="text-6xl md:text-7xl font-black bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 drop-shadow-sm animate-fade-in">
+        🎬 Explora GIFs
+      </h1>
+      <div class="flex justify-center mb-6">
+        <div class="h-1.5 w-32 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 rounded-full"></div>
+      </div>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in-delay">
+        Descubre, busca y disfruta los mejores GIFs del momento
+      </p>
+    </div>
+
+    <!-- GIF central destacado -->
+    <div class="flex justify-center mb-16 animate-fade-in-delay-2">
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+        <img
+          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3R0aHlrdWJqZnVibXlqcm0wam45dHhlZ2l6cWExY2U0Y2x5cXU4biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/k44WnHDdvfClW/giphy.gif"
+          alt="GIF animado"
+          class="relative rounded-2xl shadow-2xl w-80 sm:w-96 border-4 border-white"
+        />
+      </div>
+    </div>
+
+    <!-- Sección de características con cards mejoradas -->
+    <div class="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+      <!-- Card Trending -->
+      <div class="group relative bg-white rounded-2xl p-6 border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-10 rounded-full blur-2xl"></div>
+        <div class="relative z-10">
+          <div class="text-5xl mb-4">🔥</div>
+          <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-3">
+            GIFs en Tendencia
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            Explora los GIFs más populares y virales del momento, actualizados constantemente.
+          </p>
+        </div>
+        <div class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-600 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+      </div>
+
+      <!-- Card Search -->
+      <div class="group relative bg-white rounded-2xl p-6 border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-500 opacity-10 rounded-full blur-2xl"></div>
+        <div class="relative z-10">
+          <div class="text-5xl mb-4">🔍</div>
+          <h2 class="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent mb-3">
+            Búsqueda Personalizada
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            Encuentra exactamente lo que buscas con nuestra potente herramienta de búsqueda.
+          </p>
+        </div>
+        <div class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-emerald-600 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+      </div>
+    </div>
+
+    <!-- Stats section -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-slate-200 mb-12">
+      <div class="grid grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent mb-2">
+            1000+
+          </div>
+          <div class="text-slate-600 font-medium">GIFs Disponibles</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
+            ∞
+          </div>
+          <div class="text-slate-600 font-medium">Búsquedas Ilimitadas</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent mb-2">
+            24/7
+          </div>
+          <div class="text-slate-600 font-medium">Siempre Actualizado</div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- Estilos CSS para animaciones -->
+<style>
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+</style>

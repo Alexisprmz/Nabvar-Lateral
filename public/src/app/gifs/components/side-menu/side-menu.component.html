@@ -1,0 +1,17 @@
+<!-- gifs-side-menu-header -->
+<app-gifs-side-menu-header></app-gifs-side-menu-header>
+<!-- gifs-side-menu-options -->
+<app-gifs-side-menu-options></app-gifs-side-menu-options>
+<div class="mt-4">
+    <h3 class="text-sm font-semibold text-slate-500 uppercase mb-2">Historial</h3>
+    <ul class="space-y-1">
+    <li *ngFor="let query of apiService.searchHistory()">
+        <button
+        (click)="apiService.goToSearch(query)"
+        class="w-full text-left px-3 py-1 rounded hover:bg-slate-200 transition"
+        >
+        {{ query }}
+        </button>
+    </li>
+    </ul>
+</div>

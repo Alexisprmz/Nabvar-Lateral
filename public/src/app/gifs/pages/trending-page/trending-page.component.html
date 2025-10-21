@@ -1,0 +1,34 @@
+<div class="p-6">
+  <h2 class="text-xl font-semibold mb-4 text-slate-700">{{ apiService.title() }}</h2>
+
+  <!-- Mensajes -->
+  <div *ngIf="apiService.loading()" class="text-blue-500 font-medium">Cargando GIFs...</div>
+  <div *ngIf="apiService.error()" class="text-red-600 font-semibold">{{ apiService.error() }}</div>
+
+  <!-- Grid de GIFs -->
+  <div *ngIf="!apiService.loading() && apiService.gifs().length" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
+    <div *ngFor="let gif of apiService.gifs()" class="flex flex-col items-center">
+      <img
+        [src]="gif.images.fixed_height?.url || gif.images.original.url"
+        [alt]="gif.title"
+        class="rounded-xl shadow-md hover:scale-105 transition-transform"
+      />
+      <span class="mt-2 text-sm text-slate-700 text-center">{{ gif.title || 'Sin título' }}</span>
+    </div>
+  </div>
+
+  <!-- Paginación -->
+  <div *ngIf="!apiService.loading()" class="flex justify-center items-center gap-4 mt-4">
+    <button (click)="prevPage()" [disabled]="offset() === 0"
+      class="bg-gray-700 text-white px-4 py-2 rounded disabled:opacity-50 hover:bg-gray-800">
+      Anterior
+    </button>
+
+    <span class="text-slate-600 font-medium">Página {{ page() }}</span>
+
+    <button (click)="nextPage()"
+      class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+      Siguiente
+    </button>
+  </div>
+</div>

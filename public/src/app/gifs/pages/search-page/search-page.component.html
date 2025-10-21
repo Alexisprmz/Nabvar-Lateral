@@ -1,0 +1,27 @@
+<div class="p-6">
+  <h2 class="text-xl font-semibold mb-2 text-slate-700">
+    🔎 Resultados de búsqueda
+    <span *ngIf="apiService.lastQuery()" class="text-slate-500 font-normal text-base">
+      para "{{ apiService.lastQuery() }}"
+    </span>
+  </h2>
+
+  <div *ngIf="loading()" class="text-blue-500 font-medium">Cargando GIFs...</div>
+
+  <div *ngIf="errorMessage()" class="text-red-600 font-semibold">{{ errorMessage() }}</div>
+
+  <div *ngIf="!loading() && gifs().length" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <div *ngFor="let gif of gifs()" class="flex flex-col items-center">
+      <img
+        [src]="gif.images.fixed_height?.url || gif.images.original.url"
+        [alt]="gif.title"
+        class="rounded-xl shadow-md hover:scale-105 transition-transform"
+      />
+      <span class="mt-2 text-sm text-slate-700 text-center">{{ gif.title || 'Sin título' }}</span>
+    </div>
+  </div>
+
+  <div *ngIf="!loading() && !gifs().length" class="text-slate-500 mt-6">
+    No se encontraron resultados 😓
+  </div>
+</div>

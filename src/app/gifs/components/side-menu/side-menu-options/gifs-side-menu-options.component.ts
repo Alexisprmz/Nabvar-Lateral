@@ -20,19 +20,19 @@ export class GifsSideMenuOptionsComponent {
 
   menuOptions: MenuOption[] = [
     {
-      icon: 'fa-solid fa-house',
+      icon: 'dashboard',
       title: 'Dashboard',
       subtitle: 'Main page overview',
-      router: '/dashboard'
+      router: '/dashboard/home'
     },
     {
-      icon: 'fa-solid fa-chart-line',
+      icon: 'trending_up',
       title: 'Trending',
       subtitle: 'The best gifs',
       router: '/dashboard/trending'
     },
     {
-      icon: 'fa-solid fa-magnifying-glass',
+      icon: 'search',
       title: 'Search',
       subtitle: 'Find your favorite gifs',
       router: '/dashboard/search'
