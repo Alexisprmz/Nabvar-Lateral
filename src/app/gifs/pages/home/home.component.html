@@ -1,6 +1,5 @@
 <div class="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 flex flex-col items-center justify-center px-6 py-12">
   <div class="max-w-5xl mx-auto">
-    <!-- Título principal con gradiente -->
     <div class="text-center mb-12">
       <h1 class="text-6xl md:text-7xl font-black bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 drop-shadow-sm animate-fade-in">
         🎬 Explora GIFs
@@ -13,7 +12,6 @@
       </p>
     </div>
 
-    <!-- GIF central destacado -->
     <div class="flex justify-center mb-16 animate-fade-in-delay-2">
       <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
@@ -25,9 +23,7 @@
       </div>
     </div>
 
-    <!-- Sección de características con cards mejoradas -->
     <div class="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-      <!-- Card Trending -->
       <div class="group relative bg-white rounded-2xl p-6 border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
         <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-10 rounded-full blur-2xl"></div>
         <div class="relative z-10">
@@ -42,7 +38,6 @@
         <div class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-600 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
       </div>
 
-      <!-- Card Search -->
       <div class="group relative bg-white rounded-2xl p-6 border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
         <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-500 opacity-10 rounded-full blur-2xl"></div>
         <div class="relative z-10">
@@ -83,30 +78,3 @@
     </div>
 
 
-<!-- Estilos CSS para animaciones -->
-<style>
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
-}
-
-.animate-fade-in-delay {
-  animation: fade-in 0.8s ease-out 0.2s forwards;
-  opacity: 0;
-}
-
-.animate-fade-in-delay-2 {
-  animation: fade-in 0.8s ease-out 0.4s forwards;
-  opacity: 0;
-}
-</style>

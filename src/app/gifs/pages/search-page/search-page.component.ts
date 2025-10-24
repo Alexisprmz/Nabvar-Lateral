@@ -17,16 +17,15 @@ export class SearchPageComponent {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
-  // Signals directos desde el servicio
   gifs = this.apiService.gifs;
   loading = this.apiService.loading;
   errorMessage = this.apiService.error;
 
-  // Variable para el input de búsqueda
   searchQuery = '';
-
+ getGifsForColumn(columnIndex: number) {
+    return this.gifs().filter((gif, index) => index % 4 === columnIndex);
+  }
   constructor() {
-    // Suscribirse a los query params de la URL
     this.route.queryParams.subscribe(params => {
       const query = params['q'] || '';
       if (query) {
@@ -35,21 +34,17 @@ export class SearchPageComponent {
       }
     });
   }
-
-  // Método para realizar la búsqueda
   onSearch(): void {
     const query = this.searchQuery.trim();
     
     if (!query) return;
 
-    // Actualizar la URL con el query param
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { q: query },
       queryParamsHandling: 'merge'
     });
 
-    // Realizar la búsqueda
     this.apiService.searchGifs(query);
   }
 }

@@ -11,26 +11,24 @@ import { ApiService } from '../../services/api.service';
 })
 export class TrendingPageComponent {
 
-  // 🔹 Servicio público para poder acceder desde el template
   public apiService = inject(ApiService);
 
   constructor() {
-    // Cargar los GIFs al iniciar
     this.loadGifs();
 
-    // Guardar GIFs en localStorage automáticamente
     effect(() => {
       const gifs = this.apiService.gifs();
       if (gifs.length) localStorage.setItem('trendingGifs', JSON.stringify(gifs));
     });
   }
 
-  // 🔥 Cargar GIFs usando el servicio
   loadGifs(): void {
     this.apiService.getTrendingGifs(0);
   }
+  getGifsForColumn(columnIndex: number) {
+  return this.apiService.gifs().filter((gif, index) => index % 4 === columnIndex);
+}
 
-  // 🔄 Actualizar GIFs (recargar desde el inicio)
   refreshGifs(): void {
     this.loadGifs();
   }

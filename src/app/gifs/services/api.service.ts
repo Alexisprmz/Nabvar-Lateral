@@ -11,7 +11,6 @@ export class ApiService {
   private readonly apiUrl = 'https://api.giphy.com/v1/gifs';
   private readonly apiKey = 'LhJgmZp2NOzCqyte5q13kjguEUIi4maP';
 
-  // 🔹 Estado reactivo
   gifs = signal<Gif[]>([]);
   loading = signal(false);
   error = signal<string | null>(null);
@@ -19,10 +18,8 @@ export class ApiService {
   offset = signal(0);
   limit = 20;
 
-  // 🔹 Historial de búsquedas (máximo 10)
   searchHistory = signal<string[]>([]);
 
-  // 🔹 Título dinámico
   readonly title = computed(() =>
     this.lastQuery()
       ? `Resultados de "${this.lastQuery()}"`
@@ -30,11 +27,9 @@ export class ApiService {
   );
 
   constructor() {
-    // Cargar historial desde localStorage al iniciar
     const stored = localStorage.getItem('searchHistory');
     if (stored) this.searchHistory.set(JSON.parse(stored));
 
-    // Guardar GIFs recientes en LocalStorage automáticamente
     effect(() => {
       const gifs = this.gifs();
       if (gifs.length > 0) {
@@ -42,8 +37,6 @@ export class ApiService {
       }
     });
   }
-
-  // 🔥 Obtener GIFs en tendencia
   getTrendingGifs(offset: number = 0) {
     this.loading.set(true);
     this.error.set(null);
@@ -65,8 +58,6 @@ export class ApiService {
       },
     });
   }
-
-  // 🔍 Buscar GIFs
   searchGifs(query: string) {
     if (!query.trim()) return;
 
@@ -74,7 +65,6 @@ export class ApiService {
     this.error.set(null);
     this.lastQuery.set(query);
 
-    // 🔹 Guardar en historial
     const history = this.searchHistory();
     if (!history.includes(query)) {
       this.searchHistory.set([query, ...history].slice(0, 10));
@@ -105,7 +95,6 @@ export class ApiService {
     }
   }
 
-  // 🔄 Redirigir a search con query
   goToSearch(query: string) {
     this.router.navigate(['/dashboard/search'], { queryParams: { q: query } });
   }

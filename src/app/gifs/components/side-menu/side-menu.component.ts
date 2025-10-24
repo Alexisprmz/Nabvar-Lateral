@@ -14,6 +14,6 @@ export class SideMenuComponent {
   public apiService = inject(ApiService);
 
   constructor() {
-    this.apiService.loadHistory(); // cargar historial al iniciar
+    this.apiService.loadHistory(); 
   }
 }
